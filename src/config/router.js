@@ -40,13 +40,13 @@ const router = new VueRouter({
   routes,
 });
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some((record) => record.meta.requiresLogin)) {
-//     const res = axios.post(`${baseApiUrl}/auth/validate`);
-//     res ? next() : next({ path: "/" });
-//   } else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresLogin)) {
+    const res = axios.post(`${baseApiUrl}/users/validate`);
+    res ? next() : next({ path: "/" });
+  } else {
+    next();
+  }
+});
 
 export default router;

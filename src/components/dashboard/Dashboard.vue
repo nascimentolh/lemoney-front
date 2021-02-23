@@ -3,7 +3,7 @@
     <PageTitle
       icon="fa fa-home"
       main="Dashboard"
-      sub="Lista das provas realizadas"
+      sub=""
     />
   </div>
 </template>

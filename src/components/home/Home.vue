@@ -1,8 +1,9 @@
 <template>
   <div class="home-content">
-    <b-row>
+    <b-row v-if="offers.length">
       <b-col
-        md="3"
+        lg="3"
+        md="12"  
         sm="12"
         v-for="offer in offers"
         :key="offer.id"
@@ -13,7 +14,6 @@
           tag="article"
           class="mb-2"
         >
-          Time Remaning: 
           <b-card-text>
             <strong>Description:</strong>
             {{ offer.description }}
@@ -26,11 +26,16 @@
         </b-card>
       </b-col>
     </b-row>
+    <b-row v-else>
+      <b-col md="12" sm="12" class="mt-2 text-center">
+        <h1>Not offers yet</h1>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
-import { baseApiUrl, showError } from "@/global";
+import { baseApiUrl } from "@/global";
 import axios from "axios";
 
 export default {

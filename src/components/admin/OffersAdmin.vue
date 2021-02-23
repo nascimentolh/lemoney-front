@@ -133,6 +133,16 @@ export default {
       ],
     };
   },
+  watch: {
+    offer: function () {
+      this.offer.starts_at
+        ? (this.offer.starts_at = new Date(this.offer.starts_at))
+        : null;
+      this.offer.ends_at
+        ? (this.offer.ends_at = new Date(this.offer.ends_at))
+        : null;
+    },
+  },
   methods: {
     rowClass(item, type) {
       if (!item || type !== "row") return;

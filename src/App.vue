@@ -4,7 +4,7 @@
       title="Questions APP"
       :hideUserDropdown="!user"
     />
-    <!-- <Loading v-if="validatingToken" /> -->
+    <Loading v-if="validatingToken" />
     <Content />
     <Footer />
   </div>
@@ -42,7 +42,7 @@ export default {
         return;
       }
 
-      const res = await axios.post(`${baseApiUrl}/auth/validate`);
+      const res = await axios.get(`${baseApiUrl}/users/validate`);
 
       if (res.data === true) {
         this.$store.commit("setUser", userData);
@@ -55,7 +55,7 @@ export default {
     },
   },
   created() {
-    //this.validadeToken();
+    this.validadeToken();
   },
 };
 </script>
