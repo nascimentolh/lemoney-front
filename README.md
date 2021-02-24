@@ -10,13 +10,13 @@
 
 ## About :information_source:
 
-Essa é o front que se conecta com backend que realiza cadastro de Provas e Questões.
+This is the front that connects with the [API](https://github.com/nascimentolh/lemoney) that performs the registration of Offers
 
 ## Technology :computer:
 
-- **VueJS** - Vue.js é um framework para construção de interfaces de usuário e aplicativos "Single Page"
-- **Axios** - Biblioteca JavaScript utilizada para realizar e controlar requests HTTP.
-- **ESLint, Prettier** - Bibliotecas utilizadas para linting e padronização de código.
+- **VueJS** - Vue.js is a framework for building user interfaces and "Single Page" applications
+- **Axios** - JavaScript library used to make and control HTTP requests.
+- **ESLint, Prettier** - Libraries used for code linting and standardization.
 
 ## Getting Started :rocket:
 
