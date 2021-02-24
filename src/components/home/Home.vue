@@ -3,25 +3,20 @@
     <b-row v-if="offers.length">
       <b-col
         lg="3"
-        md="12"  
+        md="12"
         sm="12"
         v-for="offer in offers"
         :key="offer.id"
         class="d-flex align-items-stretch"
       >
-        <b-card
-          :title="offer.advertiser_name"
-          tag="article"
-          class="mb-2"
-        >
+        <b-card :title="offer.advertiser_name" tag="article" class="mb-2">
           <b-card-text>
             <strong>Description:</strong>
             {{ offer.description }}
           </b-card-text>
 
-
-          <template #footer @click="accessOffer(offer.url)">
-            Access
+          <template #footer>
+            <div @click="accessOffer(offer.url)">Access</div>
           </template>
         </b-card>
       </b-col>
@@ -69,6 +64,9 @@ export default {
         };
         this.offers = this.filterArray(res.data, filters);
       });
+    },
+    accessOffer(link) {
+      location.href = link;
     },
   },
   mounted() {

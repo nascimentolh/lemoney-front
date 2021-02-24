@@ -1,42 +1,43 @@
-<h1 align="center">Lyncas Challenge Frontend</h1>
+<h1 align="center">Lemoney Challenge Frontend</h1>
 
 <div align="center">
   <p align="center">
-    <a href="#sobre-information_source">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#tecnologias-computer">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#iniciando-rocket">Iniciando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#about-information_source">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#technology-computer">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#getting-started-rocket">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   </p>
 </div>
 
-## Sobre :information_source:
+## About :information_source:
 
 Essa é o front que se conecta com backend que realiza cadastro de Provas e Questões.
 
-## Tecnologias :computer:
+## Technology :computer:
 
 - **VueJS** - Vue.js é um framework para construção de interfaces de usuário e aplicativos "Single Page"
 - **Axios** - Biblioteca JavaScript utilizada para realizar e controlar requests HTTP.
 - **ESLint, Prettier** - Bibliotecas utilizadas para linting e padronização de código.
 
-## Iniciando :rocket:
+## Getting Started :rocket:
 
-### Execute os testes
+### Run the test
 
-1. Execute `yarn` para instalar as dependências do projeto.
-2. Execute `yarn test` para rodar todos os testes implementados.
+1. Run `npm install` to install the project's dependencies.
+2. Run `npm run test` to run all tests implemented.
 
-**Obs:** Os testes ainda não foram implementados :confused:
 
-### Execute a aplicação
+**Obs:** Tests have not yet been implemented :confused:
 
-### Executando na máquina: 
-OBS: Será necessario ter instalado na maquina [NodeJS](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/)
+### Run the application
 
-1. Execute `yarn` para instalar as dependências do projeto.
-2. Execute `yarn serve` para subir a aplicação (Desenvolvimento).
-3. O projeto será executado no link [http://localhost:8080](http://localhost:8080).
+### Running locally:
+NOTE: It will be necessary to have installed [NodeJS](https://nodejs.org/en/)
 
-> Para realizar os cadastros de provas e questões você deverá estár autenticado. Usuário: admin || Senha: teste@123
+1. Run `npm install` to install the project dependencies.
+2. Run `npm run serve` to start the application (Development).
+3. The project will be executed at the link [http://localhost:8080](http://localhost:8080).
+
+> To perform the registration of users and offers you must be authenticated. User: test@test.com || Password: test@123
 
 > Login : [http://localhost:8080/auth](http://localhost:8080/auth)
 

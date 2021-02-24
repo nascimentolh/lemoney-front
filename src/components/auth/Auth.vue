@@ -27,7 +27,7 @@ export default {
         .then((res) => {
           this.$store.commit("setUser", res.data);
           localStorage.setItem(userKey, JSON.stringify(res.data));
-          this.$router.push({ path: "/dashboard" });
+          this.$router.push({ path: "/admin" });
         })
         .catch(showError);
     },

@@ -12,6 +12,7 @@
               id="offer-advertiser-name"
               type="text"
               v-model="offer.advertiser_name"
+              :readonly="mode === 'remove'"
               required
               placeholder="inform the advertiser name"
             />
@@ -23,6 +24,7 @@
               id="offer-url"
               type="text"
               v-model="offer.url"
+              :readonly="mode === 'remove'"
               required
               placeholder="inform the URI"
             />
@@ -36,38 +38,49 @@
               id="textarea"
               v-model="offer.description"
               placeholder="Enter something..."
+              :readonly="mode === 'remove'"
+              required
               rows="3"
               max-rows="6"
             ></b-form-textarea>
           </b-form-group>
         </b-col>
       </b-row>
+      <b-form-checkbox
+        id="offer-premium"
+        v-model="offer.premium"
+        value="true"
+        v-show="mode === 'save'"
+        unchecked-value="false"
+        class="mt-3 mb-3"
+      >
+        Premium?
+      </b-form-checkbox>
       <b-row>
-        <b-col md="4" sm="12">
+        <b-col md="6" sm="12">
           <b-form-group label="Starts At:" label-for="offer-starts-at">
-            <date-picker v-model="offer.starts_at"></date-picker>
+            <date-picker
+              v-model="offer.starts_at"
+              required
+              :readonly="mode === 'remove'"
+            ></date-picker>
           </b-form-group>
         </b-col>
-        <b-col md="4" sm="12">
+        <b-col md="6" sm="12">
           <b-form-group label="Ends At:" label-for="offer-ends-at">
-            <date-picker v-model="offer.ends_at"></date-picker>
-          </b-form-group>
-        </b-col>
-        <b-col md="4" sm="12">
-          <b-form-group label="Premium:" label-for="offer-premium">
-            <b-form-checkbox
-              id="offer-premium"
-              v-model="offer.premium"
-              value="true"
-              unchecked-value="false"
-            >
-            </b-form-checkbox>
+            <date-picker
+              v-model="offer.ends_at"
+              :readonly="mode === 'remove'"
+            ></date-picker>
           </b-form-group>
         </b-col>
       </b-row>
-      <b-button variant="success" v-if="mode === 'save'" @click="save">
-        Salvar
-      </b-button>
+      <b-button variant="success" v-if="mode === 'save'" @click="save"
+        >Salvar</b-button
+      >
+      <b-button variant="danger" v-if="mode === 'remove'" @click="remove"
+        >Delete</b-button
+      >
       <b-button class="ml-2" @click="reset">Cancelar</b-button>
     </b-form>
     <b-table
@@ -98,7 +111,11 @@
         >
           <i class="fa fa-close"></i>
         </b-button>
-        <b-button variant="danger" @click="loadOffer(data.item)" class="mr-2">
+        <b-button
+          variant="danger"
+          @click="loadOffer(data.item, 'remove')"
+          class="mr-2"
+        >
           <i class="fa fa-trash"></i>
         </b-button>
       </template>
@@ -182,6 +199,16 @@ export default {
       offer.active = offer.active ? false : true;
       axios
         .put(`${baseApiUrl}/offers/${offer.id}`, offer)
+        .then(() => {
+          this.$toasted.global.defaultSuccess();
+          this.reset();
+        })
+        .catch(showError);
+    },
+    remove() {
+      const id = this.offer.id;
+      axios
+        .delete(`${baseApiUrl}/offers/${id}`)
         .then(() => {
           this.$toasted.global.defaultSuccess();
           this.reset();

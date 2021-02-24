@@ -1,8 +1,14 @@
 <template>
   <header class="header">
-    <img src="https://d1lct8wjakcxob.cloudfront.net/assets/logos/logo-lemoney-3325db2b10a510c8ef9d1d30aab4be08d985a74e59ddc5ad7e17d2b19a0bf08d.svg" alt="Lemoney Challenge">
+    <router-link to="/">
+      <img
+        src="https://d1lct8wjakcxob.cloudfront.net/assets/logos/logo-lemoney-3325db2b10a510c8ef9d1d30aab4be08d985a74e59ddc5ad7e17d2b19a0bf08d.svg"
+        alt="Lemoney Challenge"
+      />
+    </router-link>
+
     <UserDropdown v-if="!hideUserDropdown" />
-    <UserLogin v-else/>
+    <UserLogin v-else />
   </header>
 </template>
 
@@ -54,7 +60,7 @@ export default {
   text-decoration: none;
 }
 
-header>img {
-    margin-left: 50px;
+header > a > img {
+  margin-left: 50px;
 }
 </style>
