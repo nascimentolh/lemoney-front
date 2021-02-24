@@ -12,6 +12,8 @@
 
 This is the front that connects with the [API](https://github.com/nascimentolh/lemoney) that performs the registration of Offers
 
+The app was deployed on the [Umbler](https://www.umbler.com/) and can be accessed without a link [FRONT_LEMONEY](http://lemoneyfront-com.umbler.net/)
+
 ## Technology :computer:
 
 - **VueJS** - Vue.js is a framework for building user interfaces and "Single Page" applications
@@ -39,11 +41,13 @@ NOTE: It will be necessary to have installed [NodeJS](https://nodejs.org/en/)
 
 > To perform the registration of users and offers you must be authenticated. User: test@test.com || Password: test@123
 
-> Login : [http://localhost:8080/auth](http://localhost:8080/auth)
+> Login : [http://lemoneyfront-com.umbler.net/auth](http://lemoneyfront-com.umbler.net/auth)
 
 
 ### Screenshots:
 
-<img src="app_01.png" alt="preview" />
+<img src="login_page.png" alt="preview" />
 
-<img src="app_02.png" alt="preview" />
+<img src="management.png" alt="preview" />
+
+<img src="management_2.png" alt="preview" />

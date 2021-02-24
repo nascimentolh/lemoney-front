@@ -1,7 +1,7 @@
 <template>
   <div class="users-admin">
     <b-form>
-      <input type="hidden" id="user-id" v-model="offer.id" />
+      <input type="hidden" id="offer-id" v-model="offer.id" />
       <b-row>
         <b-col md="6" sm="12">
           <b-form-group
@@ -84,8 +84,6 @@
       <b-button class="ml-2" @click="reset">Cancelar</b-button>
     </b-form>
     <b-table
-      hover
-      striped
       :items="users"
       :fields="fields"
       class="mb-0 p-0 mt-3"
